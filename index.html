@@ -6,11 +6,20 @@
     <title>Carrinho</title> <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Ovos em Promoção:</h1>
+    <button id="btnAbrirCarrinho"><img src="./img/cart.png" alt="" class="cartimg"></button>
+    <div id="carrinho"> 
+        <div id="counter">
+            <button id="plus" class="count-button">+</button>
+            <span id="value">0</span>
+            <button id="minus" class="count-button">-</button>
+        </div>
+        <button id="btnFecharCarrinho">X</button>
+    </div>
     <div id="listagem">
         <ul id="lista" class="lista" ></ul>
     </div>
-
-
+    
    <script src="./script.js"></script>
 </body>
 </html>

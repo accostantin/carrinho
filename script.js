@@ -1,41 +1,58 @@
 //localizar produtos
 const products = [
     {
-        name: "Ovo de Brigadeiro - Cacau Show",
+        name: "Ovo de páscoa Chokito - Brasil Cacau",
         price: 69.99,
-        Image: "./img/brigadeiro.webp"
+        image: "./img/chokito.png",
 
     },
     {
-        name: "Ovo de Brownie - Cacau Show",
+        name: "Ovo de páscoa Kit Kat - Brasil Cacau",
         price: 69.99,
-        Image: "./img/brownie.webp"       
+        image: "./img/kitkat.png",       
     },
     {
-        name: "Ovo de Mil folhas Avelã - Cacau Show",
+        name: "Ovo de páscoa Ovomaltine - Brasil Cacau",
         price: 69.99,
-        Image: "./img/milfolhasavela.webp"
+        image: "./img/ovomaltine.png",
     },
     {
-        name: "Ovo de Mil folhas Tradicional - Cacau Show",
+        name: "Ovo de páscoa Prestígio - Brasil Cacau",
         price: 69.99,
-        Image: "./img/milfolhastrad.webp"
+        image: "./img/prestigio.png",
     }
 ]
 
 //localizar o container
-
-products.forEach((products)) => {
+products.forEach((produtos)=> {
     const box = document.createElement("li");
     box.classList.add("box");
     box.innerHTML = `
-        <img class="ovo" src="${products.Image}" alt="">
-        <h2 class="eggtitle"> ${products.name}</h2>
-        <div class="container">
-        <p class="preco">R$ ${products.price.toFixed(2).replace(".", ",")}</p>
+        <img class="ovo" src="${produtos.image}" alt="Produto">
+        <h2 class="eggtitle"> ${produtos.name}</h2>
+        <div class="container"> 
+        <p class="preco" >R$ ${produtos.price.toFixed(2)}</p>
         <button class="btn">Comprar</button>
-    </div>
+        </div>
+    `;
 
-const lista = document.querySelector(".lista-produtos");
-Lista.appendChild(box);
-})
+    const lista = document.getElementById("lista");
+    lista.appendChild(box)
+}) 
+
+//carrinho  
+const btnAbrirCarrinho = document.getElementById("btnAbrirCarrinho")
+const btnFecharCarrinho = document.getElementById("btnFecharCarrinho")
+const carrinho = document.getElementById("carrinho")
+
+function AbrirCarrinho(){
+    carrinho.style.right = "0px"
+    btnAbrirCarrinho.style.right = "290px"
+}
+function FecharCarrinho(){
+    carrinho.style.right = "-300px"
+    btnAbrirCarrinho.style.right = "0px"
+}
+
+btnAbrirCarrinho.addEventListener("click", AbrirCarrinho)
+btnFecharCarrinho.addEventListener("click", FecharCarrinho)
